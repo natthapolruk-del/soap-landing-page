@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PureAura Natural Soap - สบู่สมุนไพรธรรมชาติ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <h1>PureAura Natural Soap</h1>
+    <p>สบู่สมุนไพรสกัดเย็น อ่อนโยนต่อทุกสภาพผิว ไร้สารเคมี</p>
+    <a href="#order-section" class="btn-primary">สั่งซื้อเลย</a>
+    <a href="admin.html" class="admin-link">เข้าสู่ระบบหลังบ้าน (แพ็คสินค้า)</a>
+  </header>
+
+  <section class="products" id="order-section">
+    <h2>เลือกสูตรสบู่ที่เหมาะกับคุณ</h2>
+    <div class="product-grid">
+      <!-- SKU 1 -->
+      <div class="card">
+        <img src="images/soap-sku1.jpg" alt="สบู่น้ำผึ้งขมิ้น">
+        <h3>SKU-01: สบู่น้ำผึ้งขมิ้นชัน</h3>
+        <p class="desc">ลดสิว ผิวกระจ่างใส เนียนนุ่มชุ่มชื้น (100g)</p>
+        <p class="price">ราคา 120 บาท</p>
+        <label>จำนวน (ก้อน): 
+          <input type="number" id="sku1" min="0" value="1" onchange="calculateTotal()">
+        </label>
+      </div>
+
+      <!-- SKU 2 -->
+      <div class="card">
+        <img src="images/soap-sku2.jpg" alt="สบู่ชาเขียวอโลเวร่า">
+        <h3>SKU-02: สบู่ชาเขียว & อโลเวร่า</h3>
+        <p class="desc">ปลอบประโลมผิว ลดความมัน กระชับรูขุมขน (100g)</p>
+        <p class="price">ราคา 150 บาท</p>
+        <label>จำนวน (ก้อน): 
+          <input type="number" id="sku2" min="0" value="0" onchange="calculateTotal()">
+        </label>
+      </div>
+    </div>
+
+    <!-- ฟอร์มกรอกข้อมูลจัดส่ง -->
+    <form id="orderForm" class="order-box">
+      <h3>ข้อมูลสำหรับจัดส่งพัสดุ</h3>
+      <div class="total-bar">ยอดรวมสุทธิ: <span id="totalPrice">120</span> บาท (ส่งฟรี)</div>
+      
+      <input type="text" id="custName" placeholder="ชื่อ-นามสกุล ผู้รับ" required>
+      <input type="tel" id="custPhone" placeholder="เบอร์โทรศัพท์ติดต่อ" required>
+      <textarea id="custAddress" rows="3" placeholder="ที่อยู่จัดส่ง (บ้านเลขที่, ตำบล, อำเภอ, จังหวัด, รหัสไปรษณีย์)" required></textarea>
+      
+      <button type="submit" id="submitBtn" class="btn-submit">ยืนยันการสั่งซื้อ</button>
+    </form>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
